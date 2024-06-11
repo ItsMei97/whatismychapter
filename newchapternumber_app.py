@@ -50,7 +50,7 @@ st.write("""We are really sorry for any inconvenience caused when we changed the
 We want to make sure that everyone reading the novel we translate gets well taken care of! Happy reading!""")
 
 # User input
-user_input = st.number_input('Enter a number:', min_value=1.0, max_value=303.0, step=0.1)
+user_input = st.number_input('Enter a number:', min_value=1, max_value=303, step=0.1)
 
 # Round the input number to the nearest integer if necessary
 if user_input.is_integer():
