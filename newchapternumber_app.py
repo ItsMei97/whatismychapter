@@ -1,5 +1,15 @@
 import streamlit as st
 
+# Add custom CSS to hide the GitHub icon
+hide_github_icon = """
+<style>
+.css-1vbd788.e1fqkh3o3 {
+  visibility: hidden;
+}
+</style>
+"""
+st.markdown(hide_github_icon, unsafe_allow_html=True)
+
 # Dictionary mapping the old numbers to the new numbers
 number_mapping = {
     1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8, 9: 9, 10: 10,
@@ -46,7 +56,7 @@ user_input = st.number_input('Enter a number:', min_value=1.0, max_value=303.0, 
 if user_input.is_integer():
     formatted_input = int(user_input)
 else:
-    formatted_input = float(user_input)
+    formatted_input = round(user_input, 1)
 
 # Get the corresponding number
 if formatted_input in number_mapping:
