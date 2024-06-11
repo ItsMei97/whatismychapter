@@ -3,12 +3,13 @@ import streamlit as st
 # Add custom CSS to hide the GitHub icon
 hide_github_icon = """
 <style>
-.css-1vbd788.e1fqkh3o3 {
+.stActionButton[data-testid="stActionButton"] {
   visibility: hidden;
 }
 </style>
 """
 st.markdown(hide_github_icon, unsafe_allow_html=True)
+
 
 # Dictionary mapping the old numbers to the new numbers
 number_mapping = {
@@ -50,7 +51,7 @@ st.write("""We are really sorry for any inconvenience caused when we changed the
 We want to make sure that everyone reading the novel we translate gets well taken care of! Happy reading!""")
 
 # User input
-user_input = st.number_input('Enter a number:', min_value=1, max_value=303, step=0.1)
+user_input = st.number_input('Enter a number:', min_value=1.0, max_value=303.0, step=0.1)
 
 # Round the input number to the nearest integer if necessary
 if user_input.is_integer():
